@@ -18,18 +18,30 @@
               <form class="registerForm" action="index.html" method="post">
                 <div class="form-group">
                   <label for="name">Name:</label>
-                  <input id="name" type="text">
+                  <input id="name" type="text"><br>
                   <label for="initialDeposit">Initial Deposit:</label>
                   <input id="initialDeposit" type="number">
                 </div>
               </form>
+              <button id="welcome" type="submit" name="button">Welcome to ECU!</button>
             </div>
           </div>
+
           <div class="col-md-6">
             <div class="transaction">
               <h3>Deposit or withdraw funds</h3>
+              <form class="transactionForm" action="index.html" method="post">
+                <div class="form-group">
+                  <label for="deposit">Deposit Amount:</label>
+                  <input id="deposit" type="number"><br>
+                  <label for="withdraw">Withdrawal Amount</label>
+                  <input id="withdraw" type="number">
+                </div>
+              </form>
+              <button id="process" type="submit" name="button">Process transaction</button>
             </div>
           </div>
+
         </div>
 
         <div class="balance">
