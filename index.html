@@ -30,22 +30,27 @@
           <div class="col-md-6">
             <div class="transaction">
               <h3>Deposit or withdraw funds</h3>
-              <form class="transactionForm" action="index.html" method="post">
+              <form class="depositForm" action="index.html" method="post">
                 <div class="form-group">
-                  <label for="deposit">Deposit Amount:</label>
-                  <input id="deposit" type="number"><br>
-                  <label for="withdraw">Withdrawal Amount</label>
-                  <input id="withdraw" type="number">
+                  <label for="depositInput">Deposit Amount:</label>
+                  <input id="depositInput" type="number"><br>
                 </div>
               </form>
-              <button id="process" type="submit" name="button">Process transaction</button>
+              <button id="deposit" type="submit" name="button">Deposit</button>
+              <form class="withdrawForm" action="index.html" method="post">
+                <div class="form-group">
+                  <label for="withdrawInput">Withdrawal Amount</label>
+                  <input id="withdrawInput" type="number">
+                </div>
+              </form>
+              <button id="withdraw" type="submit" name="button">Withdraw</button>
             </div>
           </div>
 
         </div>
 
         <div class="balance">
-          <p>Current balance</p>
+          <p>Current balance: $<span id="currentBal"></span></p>
         </div>
 
     </div>
