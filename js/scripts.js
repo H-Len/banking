@@ -1,3 +1,12 @@
+function addCommas(num)
+  {
+    var num_parts = num.toString().split(".");
+    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num_parts.join(".");
+  }
+
+
+
 $(document).ready(function() {
   var currentBal = "";
   console.log ("Jquery Loaded");
@@ -6,10 +15,12 @@ $(document).ready(function() {
       var userName = $("#name").val();
       console.log(userName);
       var initialDeposit = parseFloat($("#initialDeposit").val());
-      console.log(initialDeposit);
+      console.log(addCommas(initialDeposit));
       currentBal = initialDeposit;
       console.log(currentBal);
-      $("#currentBal").text(currentBal);
+      $("#currentBal").text(addCommas(currentBal));
+      $("#userName").text(userName);
+      $(".register").hide();
       // $("#currentBal").text(initialDeposit);
   })
 
@@ -20,7 +31,9 @@ $(document).ready(function() {
       console.log(deposit);
       currentBal += deposit;
       console.log(currentBal);
-      $("#currentBal").text(currentBal);
+      $("#currentBal").text(addCommas(currentBal));
+      $("form").trigger("reset");
+
   })
   $("#withdraw").click(function(event) {
     event.preventDefault();
@@ -28,7 +41,8 @@ $(document).ready(function() {
       console.log(withdraw);
       currentBal -= withdraw;
       console.log(currentBal);
-      $("#currentBal").text(currentBal);
+      $("#currentBal").text(addCommas(currentBal));
+      $("form").trigger("reset");
   })
 
 });
