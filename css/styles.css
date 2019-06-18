@@ -17,3 +17,11 @@ h1 {
   border: solid 2px black;
   background-color: lightblue;
 }
+
+h3 {
+  text-align: center;
+}
+
+.col-md-6 {
+  padding: 15px;
+}
